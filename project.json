@@ -1,0 +1,21 @@
+{
+  "overview": "Professional showcase website for J+R Immobilien — a Swiss building permit and real estate consultancy. Features 6 service offerings including full building permit handling, heat pump applications, and project coordination, with a contact form and gold/navy color scheme.",
+  "features": [
+    "6 Service cards with descriptions and CTAs",
+    "Contact form with service selection dropdown",
+    "Sticky navy navigation with mobile hamburger menu",
+    "Hero section with gold call-to-action",
+    "Responsive layout for mobile, tablet and desktop",
+    "Custom navy/gold color system throughout"
+  ],
+  "category": "business",
+  "tags": [
+    "real-estate",
+    "landing-page",
+    "german",
+    "building-permits",
+    "contact-form",
+    "showcase"
+  ],
+  "last_updated": "2026-04-18T22:44:46.454Z"
+}

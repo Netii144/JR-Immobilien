@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "General Sans", sans-serif;
+    --font-body: "General Sans", sans-serif;
+    --font-mono: monospace;
+    --radius: 0.5rem;
+
+    /* Navy primary #0d2142 */
+    --background: 1.0 0 0;
+    --foreground: 0.2 0.08 265;
+    --card: 1.0 0 0;
+    --card-foreground: 0.2 0.08 265;
+    --popover: 1.0 0 0;
+    --popover-foreground: 0.2 0.08 265;
+
+    /* Navy */
+    --primary: 0.2 0.08 265;
+    --primary-foreground: 1.0 0 0;
+
+    /* Soft blue sections #f4f6fb */
+    --secondary: 0.96 0.02 248;
+    --secondary-foreground: 0.2 0.08 265;
+    --muted: 0.96 0.02 248;
+    --muted-foreground: 0.5 0.06 250;
+
+    /* Gold accent #c9a96e */
+    --accent: 0.73 0.12 72;
+    --accent-foreground: 0.15 0.06 265;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 1.0 0 0;
+
+    /* Border #e2e6ef */
+    --border: 0.92 0.02 248;
+    --input: 0.92 0.02 248;
+    --ring: 0.73 0.12 72;
+
+    --chart-1: 0.73 0.12 72;
+    --chart-2: 0.3 0.1 260;
+    --chart-3: 0.5 0.06 250;
+    --chart-4: 0.2 0.08 265;
+    --chart-5: 0.96 0.02 248;
+
+    --sidebar: 0.2 0.08 265;
+    --sidebar-foreground: 1.0 0 0;
+    --sidebar-primary: 0.73 0.12 72;
+    --sidebar-primary-foreground: 0.2 0.08 265;
+    --sidebar-accent: 0.96 0.02 248;
+    --sidebar-accent-foreground: 0.2 0.08 265;
+    --sidebar-border: 0.92 0.02 248;
+    --sidebar-ring: 0.73 0.12 72;
+
+    /* Brand custom properties */
+    --color-navy: #0d2142;
+    --color-navy-mid: #1e3a6e;
+    --color-gold: #c9a96e;
+    --color-anthracite: #2b2d35;
+    --color-slate: #6b7a99;
+    --color-white: #ffffff;
+    --color-soft-blue: #f4f6fb;
+    --color-border: #e2e6ef;
+    --color-error: #c0392b;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-gold {
+    background-color: var(--color-gold);
+    color: var(--color-navy);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-gold:hover {
+    background-color: var(--color-navy);
+    color: var(--color-gold);
+    box-shadow: 0 8px 24px rgba(13, 33, 66, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .btn-navy {
+    background-color: var(--color-navy);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-navy:hover {
+    background-color: var(--color-navy-mid);
+    box-shadow: 0 8px 24px rgba(13, 33, 66, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-gold {
+    background: transparent;
+    color: var(--color-gold);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--color-gold);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-outline-gold:hover {
+    background-color: var(--color-gold);
+    color: var(--color-navy);
+  }
+
+  .section-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(13, 33, 66, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .section-card:hover {
+    box-shadow: 0 8px 32px rgba(13, 33, 66, 0.14);
+    transform: translateY(-2px);
+    border-color: var(--color-gold);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    font-family: var(--font-display);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-navy);
+    font-family: var(--font-display);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .gold-divider {
+    width: 3.5rem;
+    height: 3px;
+    background-color: var(--color-gold);
+    border-radius: 2px;
+  }
+
+  .nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    border-radius: 1px;
+  }
+
+  .nav-link:hover {
+    color: var(--color-gold);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color: var(--color-navy);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+  }
+
+  .input-field:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.15);
+  }
+
+  .input-field::placeholder {
+    color: var(--color-slate);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .animate-fade-in {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
